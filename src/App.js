@@ -51,6 +51,14 @@ export default function App() {
       </p>
       <br />
       <br />
+      <NewApp />
+    </div>
+  );
+}
+
+export function NewApp() {
+  return (
+    <div>
       <h1>Assignement 2</h1>
       <p>Have 2 text box</p>
       <p>One for enter the number</p>
@@ -70,6 +78,12 @@ export default function App() {
       <br />
       <br />
       <p>Have 2 radio button like this</p>
+      <p>
+        <input type="radio"></input> using for loop
+      </p>
+      <p>
+        <input type="radio"></input> uing while loop
+      </p>
     </div>
   );
 }
