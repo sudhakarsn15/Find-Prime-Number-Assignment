@@ -3,11 +3,10 @@ import "./styles.css";
 export default function App() {
   function determinePrime() {
     var inputTextValue = document.getElementById("inputText").value;
-    console.log("here", inputTextValue);
     let isPrime = true;
     // check if number is equal to 1
     if (inputTextValue === 1) {
-      alert.show("1 is neither prime nor composite number.");
+      console.log("1 is neither prime nor composite number.");
     }
     // check if number is greater than 1
     else if (inputTextValue > 1) {
@@ -57,6 +56,22 @@ export default function App() {
 }
 
 export function NewApp() {
+  function multiplFunc() {
+    var multiValue = document.getElementById("inputBox1").value;
+    var multiLimit = document.getElementById("inputBox2").value;
+    var multiArray = {};
+    for (i = 1; i <= multiLimit; i++) {
+      console.log(multiValue, "x", i, "=", multiValue * i);
+      // multiArray{multiValue, "x", i, "=", multiValue * i};
+    }
+    var index = 1;
+    while (index <= multiLimit) {
+      console.log(multiValue, "x", i, "=", multiValue * i);
+      index++;
+    }
+    console.log(multiArray);
+  }
+
   return (
     <div>
       <h1>Assignement 2</h1>
@@ -79,11 +94,17 @@ export function NewApp() {
       <br />
       <p>Have 2 radio button like this</p>
       <p>
-        <input type="radio"></input> using for loop
+        <input type="radio" value="forLoopOption" name="radioButton"></input>{" "}
+        using for loop
       </p>
       <p>
-        <input type="radio"></input> uing while loop
+        <input type="radio" value="whileLoopOption" name="radioButton"></input>{" "}
+        uing while loop
       </p>
+      <p>
+        <button onClick={multiplFunc}>Genrate multiplication</button>
+      </p>
+      <p id="printValues"></p>
     </div>
   );
 }
