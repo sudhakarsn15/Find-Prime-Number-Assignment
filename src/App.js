@@ -51,20 +51,27 @@ export default function App() {
 }
 
 export function NewApp() {
-  function multiplFunc() {
+  function multiplFunc(event) {
     var multiValue = document.getElementById("inputBox1").value;
     var multiLimit = document.getElementById("inputBox2").value;
-    var multiArray = {};
-    for (i = 1; i <= multiLimit; i++) {
-      console.log(multiValue, "x", i, "=", multiValue * i);
-      // multiArray{multiValue, "x", i, "=", multiValue * i};
+    var multiArray = [];
+    var multObject = {};
+    var selectedValue = event.target.value;
+    if (selectedValue === "forLoopOption") {
+      window.alert("calling for loop");
+      for (i = 1; i <= multiLimit; i++) {
+        console.log(multiValue, "x", i, "=", multiValue * i);
+        [(multiValue, "x", i, "=", multiValue * i)];
+        multiArray.push(multObject);
+      }
+    } else if (selectedValue === "whileLoopOption") {
+      window.alert("calling for while loop");
+      var index = 1;
+      while (index <= multiLimit) {
+        console.log(multiValue, "x", i, "=", multiValue * i);
+        index++;
+      }
     }
-    var index = 1;
-    while (index <= multiLimit) {
-      console.log(multiValue, "x", i, "=", multiValue * i);
-      index++;
-    }
-    console.log(multiArray);
   }
 
   return (
@@ -89,15 +96,25 @@ export function NewApp() {
       <br />
       <p>Have 2 radio button like this</p>
       <p>
-        <input type="radio" value="forLoopOption" name="radioButton"></input>{" "}
+        <input
+          type="radio"
+          value="forLoopOption"
+          name="radioButton"
+          onClick={multiplFunc}
+        ></input>{" "}
         using for loop
       </p>
       <p>
-        <input type="radio" value="whileLoopOption" name="radioButton"></input>{" "}
+        <input
+          type="radio"
+          value="whileLoopOption"
+          name="radioButton"
+          onClick={multiplFunc}
+        ></input>{" "}
         uing while loop
       </p>
       <p>
-        <button onClick={multiplFunc}>Genrate multiplication</button>
+        {/* <button onClick={multiplFunc}>Genrate multiplication</button> */}
       </p>
       <p id="printValues"></p>
     </div>
