@@ -3,32 +3,26 @@ import "./styles.css";
 export default function App() {
   function determinePrime() {
     var inputTextValue = document.getElementById("inputText").value;
+    var resultDiv = document.getElementById("prime");
     let isPrime = true;
-    // check if number is equal to 1
-    if (inputTextValue === 1) {
-      console.log("1 is neither prime nor composite number.");
-    }
-    // check if number is greater than 1
-    else if (inputTextValue > 1) {
-      // looping through 2 to number-1
+    if (!/^[0-9]+$/.test(inputTextValue)) {
+      window.alert("Only numbers are allowed");
+    } else if (inputTextValue <= 0) {
+      window.alert("Please enter positive integer");
+    } else if (inputTextValue == 1) {
+      window.alert("1 is neither prime nor composite number.");
+    } else if (inputTextValue > 1) {
       for (let i = 2; i < inputTextValue; i++) {
         if (inputTextValue % i == 0) {
           isPrime = false;
           break;
         }
       }
-
       if (isPrime) {
-        // console.log(`${inputTextValue} is a prime number`);
-        console.log(inputTextValue, "is a prime number");
+        resultDiv.innerHTML = inputTextValue + " is a prime number";
       } else {
-        console.log(inputTextValue, "is a not prime number");
+        resultDiv.innerHTML = inputTextValue + " is a not prime number";
       }
-    }
-
-    // check if number is less than 1
-    else {
-      console.log("The number is not a prime number.");
     }
   }
 
@@ -49,6 +43,7 @@ export default function App() {
         {"<p id='prime'/>"}
       </p>
       <br />
+      <p id="prime"></p>
       <br />
       <NewApp />
     </div>
