@@ -7,7 +7,7 @@ export default function App() {
     let isPrime = true;
     // check if number is equal to 1
     if (inputTextValue === 1) {
-      alert("1 is neither prime nor composite number.");
+      alert.show("1 is neither prime nor composite number.");
     }
     // check if number is greater than 1
     else if (inputTextValue > 1) {
@@ -20,9 +20,10 @@ export default function App() {
       }
 
       if (isPrime) {
-        console.log(`${inputTextValue} is a prime number`);
+        // console.log(`${inputTextValue} is a prime number`);
+        console.log(inputTextValue, "is a prime number");
       } else {
-        console.log(`${inputTextValue} is a not prime number`);
+        console.log(inputTextValue, "is a not prime number");
       }
     }
 
@@ -44,11 +45,31 @@ export default function App() {
         <button onClick={determinePrime}>Find Prime</button>
       </p>
       <p>
-        On click of the button the JS used defined function <b />-
+        On click of the button the JS used defined function <br />-
         determinePrime is called which should display the result in the
         {"<p id='prime'/>"}
       </p>
-      <p id="prime"></p>
+      <br />
+      <br />
+      <h1>Assignement 2</h1>
+      <p>Have 2 text box</p>
+      <p>One for enter the number</p>
+      <p>
+        <input id="inputBox1"></input>
+      </p>
+      <p>other to enter limit</p>
+      <p>
+        <input id="inputBox2"></input>
+      </p>
+
+      <p>
+        Say, <u>first text box is 5</u> and <u>second text box is 20</u>
+        <br />
+        the it should print the muliplication table from 1 to 20
+      </p>
+      <br />
+      <br />
+      <p>Have 2 radio button like this</p>
     </div>
   );
 }
